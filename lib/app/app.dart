@@ -1,5 +1,5 @@
-import 'package:find_buddy/core/constants/app_colors.dart';
 import 'package:find_buddy/core/constants/app_strings.dart';
+import 'package:find_buddy/core/constants/app_theme.dart';
 import 'package:flutter/material.dart';
 
 import '../core/routes/app_route_generator.dart';
@@ -12,7 +12,9 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: AppStrings.appName,
-      theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary)),
+      theme: AppTheme.lightTheme(),
+      darkTheme: AppTheme.darkTheme(),
+      themeMode: ThemeMode.system,
       initialRoute: AppRoutes.splash,
       onGenerateRoute: AppRouteGenerator.generateRoute,
     );
